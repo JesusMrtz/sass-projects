@@ -1,0 +1,146 @@
+/* Importaciones */
+
+@import "variables";
+@import "partial";
+body {
+    /* Utilizamos la variable $main-color del archivo _variables.scss*/
+    background-color: $main-color;
+}
+
+
+/* Anidamiento*/
+
+h2 {
+    +p {
+        color: red;
+    }
+    >a {
+        text-transform: uppercase;
+    }
+}
+
+
+/* El uso de "&"*/
+
+.button {
+    display: inline-block;
+    background-color: red;
+    &:hover {
+        background-color: green;
+    }
+    &::after {
+        content: ".00";
+    }
+}
+
+
+/* Estructura BEM */
+
+.menu {
+    $font-size: 1rem;
+    display: table;
+    &__item {
+        font-size: $font-size;
+    }
+    &__link {
+        font-weight: bold;
+    }
+    ul {
+        font-size: $font-size * 0.9;
+    }
+    &--secondary {
+        font-size: $font-size * 0.8;
+    }
+}
+
+.widget {
+    margin: 0;
+    footer & {
+        margin-top: 1em;
+    }
+}
+
+
+/* Repetir al padre y a sus hijos*/
+
+.menu {
+    &,
+    ul {
+        list-style: none;
+    }
+}
+
+.menu {
+    color: green;
+    @at-root a#{&} {
+        color: red;
+    }
+}
+
+
+/* La regla @at-root hace que todo lo que contenga se emita en la raíz del documento en lugar de utilizar el anidamiento normal*/
+
+.menu {
+    $background-menu: blue;
+    background-color: $background-menu;
+    @at-root .icon-menu {
+        color: $background-menu;
+    }
+}
+
+
+/* Extend nos permite heredar código (cuidado con los selectores descendientes) */
+
+.menu {
+    background-color: yellow;
+    display: flex;
+    font-size: .9em;
+}
+
+.menu--secondary {
+    /* Código heredado del selector .menu */
+    @extend .menu;
+    flex-direction: column;
+}
+
+
+/* Como no herear código */
+
+.menu {
+    background-color: yellow;
+    display: flex;
+    font-size: .9em;
+    li {
+        text-transform: uppercase;
+        a {
+            text-decoration: none;
+        }
+    }
+}
+
+.menu--secondary {
+    //Código heredado del selector .menu 
+    @extend .menu;
+    flex-direction: column;
+}
+
+
+/* Como Sí heredar código */
+
+.menu {
+    background-color: yellow;
+    display: flex;
+    font-size: .9em;
+    &__item {
+        text-transform: uppercase;
+    }
+    &__link {
+        text-decoration: none;
+    }
+}
+
+.menu--secondary {
+    //Código heredado del selector de manera correcta 
+    @extend .menu;
+    flex-direction: column;
+}

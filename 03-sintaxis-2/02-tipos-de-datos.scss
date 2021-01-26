@@ -1,0 +1,126 @@
+/* Dato tipo número */
+
+.data {
+    $var: 10px;
+    type: type-of($var);
+    value: $var * 2;
+}
+
+
+/* Interpolar un valor con la función calc */
+
+.data {
+    $var: 100;
+    $numberUnit: 100 * 1px;
+    type: type-of($numberUnit);
+    value: $numberUnit / 2;
+    calc: calc(#{$numberUnit} / 2);
+}
+
+
+/* Dato de tipo strings (puede ir entre comillas o no, pero se recomienda poner las comillas) */
+
+.data {
+    $var: "Hola";
+    type: type-of($var);
+    value: $var;
+}
+
+.data {
+    $var: "Hola";
+    type: type-of($var);
+    value: unquote($var);
+}
+
+
+/* Datos de tipo color */
+
+.data {
+    $var: red;
+    type: type-of($var);
+    value: $var;
+}
+
+.data {
+    $var: #fff;
+    type: type-of($var);
+    value: $var;
+}
+
+.data {
+    $var: rgba(0, 0, 0, .5);
+    type: type-of($var);
+    value: $var;
+}
+
+
+/* Datos de tipo booleano */
+
+.data {
+    $var: 10 > 5;
+    type: type-of($var);
+    value: $var;
+}
+
+
+/* Datos de tipo null */
+
+.data {
+    $var: null;
+    type: type-of($var);
+    value: $var;
+}
+
+
+/* Datos de tipo list es similar a los array y se pueden separar por espacios o por comas */
+
+.data {
+    $var: 1 2 3;
+    type: type-of($var);
+    value: $var;
+    length: length($var);
+}
+
+.data {
+    $var: 1, 2, 3;
+    type: type-of($var);
+    value: $var;
+    length: length($var);
+}
+
+.data {
+    $var: 1 2 3, ;
+    type: type-of($var);
+    value: $var;
+    length: length($var);
+}
+
+
+/* Recuperar un valor especifico de una lista (en sass las listas inician en 1 y no en 0) */
+
+.data {
+    $var: 3, 12, 3;
+    type: type-of($var);
+    value: $var;
+    length: length($var);
+    first-item: nth($var, 1);
+    second-item: nth($var, 2);
+}
+
+
+/* Los datos de tipo maps son como los arrays asociativos en php */
+
+.data {
+    $networks-colors: (facebook: blue, youtube: red, twitter: rebeccapurple);
+    type: type-of($networks-colors);
+    value: map-get($networks-colors, youtube);
+}
+
+
+/* Interpolación se usa para construir expresiones con el valor de una variable se encierra con el valor #{variable}
+ */
+
+$var: 2;
+dv:nth-child(#{$var}) {
+    background-color: rebeccapurple;
+}

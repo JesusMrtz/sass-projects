@@ -1,0 +1,13 @@
+/* Trabajar con operador ternario */
+
+$var: 10px;
+.if {
+    width: if($var, 10px, 20px);
+}
+
+
+/* Generar string aleatorio unico  en el scope actual */
+
+.unique {
+    string-unique: unique-id();
+}

@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;1,700&display=swap');
+$main-fonts: 'Ubuntu',
+sans-serif;
+$ligth: 300;
+$normal: 400;
+$bold: 700;
+$font-size: 14px;
+$font-title: $font-size * 1.7;
+$font-antetitle: $font-size * 1.35;
+$font-subtitle: $font-size * 1.15;
+@function em($el,
+$parent: 16px) {
+    @return ($el / $parent) * 1em;
+}
+
+$colors: ( azul-base: #00B1F3,
+azul-oscuro: #03151F,
+azul-medio: #006BAB,
+azul-claro: #29DAFF,
+rojo: #FF3532,
+rojo-claro: #FF4946,
+gris-oscuro: #19242b,
+gris-claro: #CDCD,
+sucess: #00CB30);
+@function color($color) {
+    @return map-get($colors,
+    $color);
+}

@@ -1,0 +1,21 @@
+SASS tiene 7 tipos de datos: 
+    - Numeros
+    - Strings. Puede ser entrecomillados o no (pero se recomienda utilizar comillas)
+    - Colores 
+    - Booleans
+    - Null. Se utiliza en los mixins cuando un parametro es opcional
+    - List. Son equivalentes a los arreglos y se separan por comas o por espacios
+    - Maps. Son como los arreglos asociativos en PHP
+
+
+LAs operaciones que soporta sass 
+    - Concatenacion: +
+    - Resta: - (Poner espacios entre los operandos)
+    - Division: /
+    - Multiplicacion: *
+    - Módulo: % (El resto entre las divisiones)
+    - Comparaciones: (>, <, >=, <=, ==, !=)
+    - Lógicos: (and, or);
+
+
+Los placeholder es crear un bloque de declaraciones pero no se compila a nada y es util cuando se quiere guardar ciertos elementos o estilos y utilizarlos cuando se necesite para que no se repita con la ayuda de @extend

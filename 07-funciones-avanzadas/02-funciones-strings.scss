@@ -1,0 +1,28 @@
+$value: "Bienvenidos a escuela digital";
+
+/*  Obtener el tamaño del string */
+
+.string {
+    length: str-length($value);
+}
+
+
+/*  Obtener el el index de un string encontrado*/
+
+.string {
+    length: str-index($value, "escuela digital");
+}
+
+
+/* insertar una nueva cadena */
+
+.string {
+    saludo: str-insert($value, " amigos mios", 12);
+}
+
+
+/* Obtener una subcadena de una cadena */
+
+.string {
+    nueva-cadena: str-slice($value, 12);
+}

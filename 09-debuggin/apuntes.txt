@@ -1,0 +1,11 @@
+¿QUÉ ES UN SORCEMAP? 
+    - Vincular un archivo css con el archivo sass que lo originó
+
+
+ ** DIRECTIVAS  (SOLO SALEN EN LA TERMINAL) te envian mensajes a la terminal y esos mensajes son expresiones
+    - @warm
+        - Envia mensajes de alerta pero no detiene la ejecución
+    - @error
+        - Envia un mensaje de error y detiene la ejecución
+    - @debug
+        - Envia la información de la expresión recibida

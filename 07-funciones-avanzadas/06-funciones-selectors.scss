@@ -1,0 +1,22 @@
+@mixin s-nest($selector1, $selector2) {
+    $selector: selector-nest($selector1, $selector2);
+    #{$selector} {
+        display: block;
+    }
+}
+
+@mixin s-append($selector1, $selector2) {
+    $selector: selector-append($selector1, $selector2);
+    #{$selector} {
+        display: block;
+    }
+}
+
+
+/* Crear un selector anidado */
+
+@include s-nest('ul', 'li');
+
+/* CRear selector unido  */
+
+@include s-append('a', '.button');

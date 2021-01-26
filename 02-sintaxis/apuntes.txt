@@ -1,0 +1,23 @@
+* LAS VARIABLES EN SASS TIENE SCOPE 
+
+
+* Cuando se le pone a una variable:
+    - $main-color: red !default
+        - Lo que hace es que si ya existe una variable llamada $main-color, este tedrá el valor que tiene si no, creará una variable $main-color con el valor red
+
+
+* Cuando se le pone a una variable:
+    - $main-color: red !global
+        - Lo que hace es que si ya existe una variable llamada $main-color, este sobrescribirá el valor que tiene con el valor red
+
+* En sass se puede anidar los selectores
+    - se utiliza el signo "&" (sin comilla) para repetir el selector padre
+    - Para interpolar se utiliza "#{&}"
+
+
+* La regla @at-root hace que todo lo que contenga se emita en la raíz del documento en lugar de utilizar el anidamiento normal
+
+* Los partials son archivos que no se van a compilar e inician con un "_NombreArchivo.scss"
+
+* Los Extend nos permite heredar código 
+    - Hay que tener cuidado cuando heredas un código descendente (Al menos se que utilices BEM como &--algo o &__algo)

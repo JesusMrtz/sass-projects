@@ -1,0 +1,27 @@
+QUE ES SASS 
+    * Preprocesador escrito en ruby ne el 2006 
+    * Tiene dos sintaxis 
+        * Sintaxis sass 
+            - Basado en Haml
+        * Sintaxis scss
+            - Superset de css
+
+
+VENTAJAS DE USAR UN PREPROCESADOR DE CSS 
+    * Estructurar los estilos en módulos pero compilarlos a un único archivo css resultante
+    * Programar estilos automaticamente 
+    * Almacenar las guias de estilos del proyecto en variables 
+    * Hacer que los proyectos grandes sean mantenibles entre equipos de trabajo
+    * Usado por proyectos lideres 
+    * Gran comunidad y soporte 
+    * Sintaxis sólida y similar a css 
+    * Se puede usar en cualquier entorno, no solo en ruby con libsass
+
+
+FLUJO RECOMENDADO CON UN PREPROCESADOR 
+    * Crear directorios para los archivos sass 
+    * separar los archivos en módulos (crear subdirectorios si es necesario)
+    * Crear un archivo principal que defina variables e importe los módulos
+    * Compilar sass (el archivo principal o watch al directorio)
+    * en el HTML linkear solo el css compilado (se prefiere un solo archivo)
+    * Subir a producción solo css

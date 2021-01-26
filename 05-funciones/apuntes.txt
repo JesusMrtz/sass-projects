@@ -1,0 +1,31 @@
+*  LAS FUNCIONES son pedazos de código reutilizables y tienen como utilidad crear o ejecutar una funcionalidad especifica
+    - NOTA: en sass las funciones deben devolver un valor después de ciertos calculos
+
+
+* ESTAS SON ALGUNAS DE LAS FUNCIONES NATIVAS MAS POPULARES DE CSS 
+    - rgb() 
+    - rgba() 
+    - calc()
+    - scale(x, y)
+    - rotate()
+    - translate(x, y)
+    - linear-gradient() 
+    - repating-linear-gradient()
+    - radial-gradient()
+    - repating-linear-gradient()
+    - attr() 
+
+
+* Funciones nativas en SASS 
+    - unquote()
+    - quote()
+    - percentaje() - 1 es igual a 100%
+    - round() - Redondea un número a su valor mas cercano
+    - nth($list, index) - Sirve para obtener un elemento de una lista
+    - map-get($map, clave) - Para obtener un elemento de un mapa
+    - type-of() - Obtiene el tipo de dato de una variable
+    - unit() - Devuelve la unidad de medida de un número como string 
+        - Un ejemplo si mandamos un valor de 20em a unit(), ested nos arrojará "em"
+    - unitless() - Devuelve un booleano 
+        - true -> Si el dato no tiene unidad por ejemplo 20
+        - false -> Si el dato tiene unidad por ejemplo 20em

@@ -1,0 +1,20 @@
+* Hay tres tipos de iteraciones: 
+    - for 
+        - Se necesita un contador (ejemplo $i) 
+        - Se pone la palabra reservada from que indica desde donde tiene que iniciar 
+        - Se pone el valor donde iniciará
+        - Se pone la palabra reservada through que indica hasta donde tiene que finalizar 
+        - Se pone el valor donde finalizará
+        - Ejemplo: 
+            - @for $i from <start> through <end> {} 
+
+
+    - each 
+        - Normalmente se utiliza para recorrer mapas o listas
+        - Para recorrer una lista este es el ejemplo de código 
+            - @each $item in $list {}
+        - Para recorrer un map este es el ejemplo de código 
+            - @each $key, $value in $map {}
+
+
+    - while

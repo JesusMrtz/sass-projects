@@ -1,0 +1,80 @@
+// Crear nuestras propias funciones 
+@function myFunction() {
+    // is cálculos
+    @return valor;
+}
+
+// Sumar dos números
+@function suma($number1, $number2) {
+    @return $number1+$number2;
+}
+
+
+/* Función de convertir los pixeles a em */
+
+@function convertPxToEm($element, $parent: 16px) {
+    @return ($element / $parent) * 1em;
+}
+
+
+/* Función que buscará cualquier archivo (esta vez se utilizará para imagenes) */
+
+$path: '../../dist/assets/img/';
+@function imagePath($img) {
+    @return url($path + $img);
+}
+
+
+/* Función para multiples box-shadow */
+
+@function mutiple-box-shadow($number, $color) {
+    $box-shadow: 1px 1px #{$color};
+    @for $i from 1 through $number {
+        $box-shadow: '#{$box-shadow}, #{$i  + 1}px #{$i + 1}px #{$color}';
+    }
+    @return unquote($box-shadow);
+}
+
+
+/* Convertir numeros con unidad a solo números (ejemplo: Input: 20px => Output: 20) */
+
+@function no-unit($number) {
+    $no-unit: $number;
+    @if no unitless($number) {
+        $no-unit: $number / (($number * 0) + 1);
+    }
+    @return $no-unit;
+}
+
+.suma {
+    width: suma(10em, 3);
+}
+
+p {
+    font-size: convertPxToEm(3px);
+}
+
+div {
+    $font-size: 24px;
+    font-size: $font-size;
+    p {
+        font-size: convertPxToEm(7px, $font-size);
+    }
+}
+
+div {
+    background-image: imagePath('dog.jpg');
+}
+
+.multiple-shadow {
+    $color: green;
+    width: 100px;
+    height: 100px;
+    background-color: lighten($color, 10);
+    box-shadow: mutiple-box-shadow(20, $color);
+}
+
+.no-unit {
+    //line-height: no-unit(20px);
+    line-height: (4em / ((2em * 0) + 1));
+}

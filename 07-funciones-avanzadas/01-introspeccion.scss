@@ -1,0 +1,26 @@
+$var: 20;
+$map: (k1: k1, k2: k2);
+@function double($var) {
+    @return $var * 2;
+}
+
+
+/* Inspeccionar una variable */
+
+.inspect {
+    value: inspect($map);
+}
+
+
+/* Saber si una variable existe */
+
+.inspect {
+    variable-exist: variable-exists("var");
+}
+
+
+/* Saber si una función existe */
+
+.inspect {
+    function-exist: function-exists("double");
+}

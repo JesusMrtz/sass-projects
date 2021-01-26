@@ -1,0 +1,61 @@
+MAS FUNCIONES DE SASS 
+
+
+** FUNCIONES DE INTROSPECCIÓN
+    - type-of()
+    - unit() 
+    - unitless() 
+    - inspect() - Es como un console.log en javascript o un var_dump() en PHP
+    - variable-exist("variable") - Si una variable exist, pasarlo entre comillas y sin el signo "$"
+    - function-exist("functionExist") - Si una función existe, pasarlo entre comillas
+    - mixin-exist("mixinName") - Si un mixin existe, pasarlo entre comillas
+ 
+
+ ** FUNCIONES PARA STRINGS
+    - quote - AGREGAR COMILLAS 
+    - unquote - Quitar comillas 
+    - str-length($string) - Devuelve el numero de caracteres
+    - str-index($string, 'subcadena') - Nos devuelve el indice de la subcadena
+    - str-insert($stirng, 'subcadena', index) - Insertar una subcadena a partir del index 
+    - str-slice($tring, inicio, final?) - Obtiene un string a partir del inicio y el final (el final es opcional)
+    - to-upper-case()
+    - to-lower-case()
+
+
+** FUNCIONES PARA NUMEROS
+    - round() 
+    - percentage() 
+    - floor($number) - Rendodear hacia abajo
+    - ceil($number) - REndondear hacia arriba
+    - max($sumber...) - Obtiene el valor maximo de un conjunto de numeros, este método no recibe listas
+    - min($number...) - Obtiene el valor minimo de un conjunto de numeros, este método no recibe listas
+    - abs($number) - Obtiene el valor absoluto de un numero 
+    - random([limite]) - Devuelve un número aleatorio de cero a diez si no le paso un parametro
+
+
+** FUNCIONES PARA LAS LISTAS 
+    - nth($list, index) - Recupera un valor de la lista 
+    - length($list) - Devuelve la longitud de una lista 
+    - join($list1, $list2, [separador: comma | space]) - Concatena listas y usa el separador del primer argumento o se puede especificar el separador ya sea :
+        - comma 
+        - space
+    - append($list, value, [separador: comma | space]) - Añadir un nuevo argumento a una lista
+    - zip($list1, $list2) - Crea una lista multidimensional a partir de 2 listas
+
+
+** FUNCIONES PARA MAPAS 
+    - map-get($map) - Recupera un valor del mapa 
+    - map-keys($map) - Devuelve las claves del mapa en una lista
+    - map-values($map) - Devuelve los valores en una lista 
+    - map-has-key($map, key) - Devuelve true si una llave existe en el mapa 
+    - map-merge($map1, $map2) - Concatenar mapas
+
+
+** FUNCIONES PARA SELECTORES 
+    - selector-nest($selector1, $selector2) - Crea un selector anidado usando esos dos selectores 
+    - selector-append($selector1, $selector2) - Crea un selector nuevo uniendo los dos selectores
+
+
+** OTRAS FUNCIONES 
+    - if (condicion, if value, else value) - ES equivalente al operador ternario
+    - unique-id() - Genera un string aleatorio unico en el string actual

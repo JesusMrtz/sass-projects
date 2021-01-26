@@ -1,0 +1,11 @@
+/* Anidamientos de propiedades */
+
+.banner {
+    $width: 400px;
+    $height: $width * 0.75;
+    font: {
+        image: url("arbol.jpg"), url("casa.png"), url("fondo.jpg");
+        size: $width * 0.1, $width * 0.5, cover;
+        repeat: no-repeat;
+    }
+}

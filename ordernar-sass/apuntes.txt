@@ -1,0 +1,91 @@
+CARPETA BASE: 
+    -   La carpeta base/ contiene lo que podríamos llamar la plantilla del proyecto. Allí, puedes encontrar el archivo reset para reiniciar los estilos CSS, algunas reglas tipográficas y probablemente un archivo CSS que define algunos estilos estándares para los elementos HTML más comunes (y que me gusta llamar _base.scss).
+        * _base.scss
+        * _reset.scss
+        * _typography.scss
+    
+    NOTA: Si tu proyecto usa muchas animaciones CSS, podrías pensar en añadir un archivo \_animations.scss conteniendo las deficiones de @keyframes de todas tus animaciones. Si solo las usas esporádicamente, déjalas convivir con los selectores que las usan.
+
+
+CARPETA LAYOUT: 
+    - La carpeta layout/ contiene todo lo que tiene que ver con la distribución del sitio o la aplicación. Esta carpeta puede contener hojas de estilo para las partes principales del sitio (header, footer, navigation, sidebar…), el sistema de retícula o incluso el estilo CSS para los formularios.
+        * _grid.scss
+        * _header.scss
+        * _footer.scss
+        * _sidebar.scss
+        * _forms.scss
+        * _navigation.scss
+
+    NOTA: La carpeta layout/ también se puede llamar partials/, todo depende de lo que tu prefieras.
+
+
+CARPETA COMPONENTS:
+    - Para componentes más pequeños, existe la carpeta components/. Mientras layout/ tiene una visión macro (definiendo la estructura global), components/ está mucho más centrado en los widgets. Contiene todo tipo de módulos específicos como por ejemplo, un slider, un loader, un widget, y básicamente todo lo que esté en esa misma línea. Por lo general hay un montón de archivos en components/ ya que todo el sitio o la aplicación debería estar compuesto en su mayoría, de pequeños módulos.
+        * _media.scss
+        * _carousel.scss 
+        * _thumbnails.scss
+
+    NOTA: La carpeta components/ también se puede llamar modules/, todo depende de lo que tu prefieras.
+
+
+CARPETA PAGES:
+    - Si tienes estilos específicos para cada página, es mejor ponerlos en una carpeta pages/, dentro de un archivo con el nombre de la página. Por ejemplo, es común tener muchos estilos específicos para la página principal, por lo que existe la necesidad de tener un archivo _home.scss en la carpeta pages/.
+        * _home.scss
+        * _contact.scss
+
+    NOTA: Dependiendo de tu proceso de implementación, estos archivos podrían llamarse de manera independiente para evitar que sean fusionados con otros en la hoja de estilos resultante. Todo depende de ti.
+
+
+CARPETA THEMES: 
+    - En sitios y aplicaciones grandes, no es raro tener diferentes temas. Es cierto que hay diferentes maneras de tratar con los temas, pero personalmente, me gusta tenerlos todos en la carpeta themes/.
+        * _theme.scss
+        * _admin.scss
+
+    NOTA: Esto es muy específico del proyecto y es probable que sea inexistente en muchos de ellos.
+
+
+CLASE ABSTRACT (UTILS): 
+    - La carpeta abstracts/ reúne todas las herramientas y helpers de Sass utilizados en todo el proyecto. Cada variable global, función, mixin y placeholder debería estar en esta carpeta.
+
+    - La regla de oro para esta carpeta es que no debe generar ni una sola línea de CSS cuando se compila por si sola. Solo hay helpers de Sass.
+        * _variables.scss
+        * _mixins.scss
+        * _functions.scss
+        * _placeholders.scss
+
+    Cuando se trabaja en un proyecto muy grande, con muchas utilidades abstractas, podría ser interesante agruparlas por tema en vez de por tipo, por ejemplo tipografía (_typography.scss), temas ( _theming.scss), etc. Cada archivo contiene todos los helpers relacionados: variables, funciones, mixins y placeholders. Hacerlo provoca que que el código sea más fácil de navegar y mantener, especialmente cuando los archivos son muy largos.
+
+    NOTA: La carpeta abstracts/ también se puede llamar utilities/ o helpers/, dependiendo de tus preferencias.
+
+
+CARPETA VENDORS: 
+    - Y por último, pero no menos importante, la mayoría de los proyectos tienen una carpeta vendors/ que contiene todos los archivos CSS procedentes de librerías externas y frameworks – Normalize, Bootstrap, jQueryUI, FancyCarouselSliderjQueryPowered, etc. Poner estos archivos en una misma carpeta, es una buena forma de decir “¡Hey! esto no lo he escrito yo, no es mi código y no es mi responsabilidad”.
+        * _normalize.scss
+        * _bootstrap.scss
+        * _jquery-ui.scss
+        * _select2.scss
+
+    Si tienes que sobrescribir una sección de cualquier vendor, te recomiendo que tengas una octava carpeta llamada vendors-extensions/ en la que puedes poner estos archivos usando el mismo nombre que le ha dado el desarrollador.
+
+    Por ejemplo, vendors-extensions/_bootstrap.scss es un archivo que contiene todas las reglas CSS que se volverán a declarar con respecto al CSS por defecto de Bootstrap. Esto se hace para evitar editar directamente los archivos del proveedor, lo que es en general una mala idea.
+
+
+ARCHIVO PRINCIPAL: 
+    - El archivo principal (normalmente llamado main.scss) debería ser el único archivo Sass de todo el código que no empieza con guión bajo. Este archivo no debería contener nada más que @import y comentarios.
+
+    Los archivos deben de importarse según la carpeta que los contiene, una después de la otra en el siguiente orden:
+        * abstracts/
+        * vendors/
+        * base/
+        * layout/
+        * components/
+        * pages/
+        * themes/
+
+    Con el fin de mantener la legibilidad, el archivo principal debe respetar las siguientes pautas:
+
+    * un archivo para cada @import;
+    * un @import por línea;
+    * no dejar una línea en blanco entre dos archivos que pertenecen a la misma carpeta;
+    * dejar una línea en blanco después del último archivo de una carpeta;
+    * las extensiones de archivo y los guiones principales se omiten.

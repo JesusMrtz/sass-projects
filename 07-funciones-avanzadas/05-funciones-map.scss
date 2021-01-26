@@ -1,0 +1,53 @@
+$map1: ( key1: value1, key2: value2);
+$map2: (key-1: value-1, key-2: map-2);
+$breakpoints: ( small: em(360px), medium: em(768px), large: em(1024), x-large: em(1400));
+@function em($element, $parent: 16px) {
+    @return ($element / $parent) * 1em;
+}
+
+@mixin from($breakpoint) {
+    @if (map-has-key($breakpoints, $breakpoint)) {
+        @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+            @content;
+        }
+    }
+    @else {
+        @media screen and (min-width: $breakpoint) {
+            @content;
+        }
+    }
+}
+
+
+/* Unir dos maps */
+
+.map3 {
+    merge: inspect(map-merge($map1, $map2));
+}
+
+
+/* Obtener solamente las claves de un mapa */
+
+.map3 {
+    map-keys: map-keys($map1);
+}
+
+
+/* Obtener solamente los valores de un mapa */
+
+.map3 {
+    map-values: map-values($map1);
+}
+
+
+/* Saber si una propiedad existe en el mapa */
+
+.box {
+    color: red;
+    @include from(large) {
+        color: yellow;
+    }
+    @include from(525px) {
+        color: gree;
+    }
+}

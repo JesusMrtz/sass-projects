@@ -1,0 +1,26 @@
+/* Unir dos listas */
+
+$colors: red,
+blue,
+white;
+$letters: "A",
+"B",
+"C";
+.list-3 {
+    list-3: join($colors, $letters);
+}
+
+
+/* Agregar un nuevo elemento a la lista */
+
+.lists {
+    $local-colors: append($colors, yellow);
+    local-colors: $local-colors
+}
+
+
+/* Crear una lista multidimensional a partir de 2 listas */
+
+.multi-list {
+    multi-list: zip($colors, $letters);
+}

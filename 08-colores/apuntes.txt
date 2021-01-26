@@ -1,0 +1,24 @@
+** FUNCIONES PARA LOS COLORES
+
+    * FUNCIONES PARA RGB
+        - red($color) - Saber el total de rojo de un color
+        - green($color) - SAber el total de verde de un color
+        - blue($color) - Saber el total de azul de un color 
+    
+    * FUNCIONES PARA HSL 
+        - hue($color) - SAber el valor de un color 
+        - saturation($color) - Saber la saturacion de un color 
+        - lightness($color) - Saber el brillo de un color 
+
+    ** MODIFICAR LOS VALORES HSL 
+        - adjust-hue($color, valor) - Ajustar el hue del color
+        - saturate($color, valor) - Aumentar la saturación del color 
+        - desaturate($color, valor) - Disminuir la saturacion del color 
+        - lighten($color, valor) - Aumentar el brillo del color 
+        - darken($color, valor) - Disminuir el brillo del color
+
+
+    ** FUNCIONES COMPLEMENTARIOS 
+        - complement($color) - Se obtiene el color opuesto en HSL
+        - invert($color) - Se obtiene el color opuesto en RGB
+

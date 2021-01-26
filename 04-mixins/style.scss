@@ -1,0 +1,52 @@
+@mixin button($line-height, $font-size, $bg-color: blue) {
+    display: block;
+    line-height: $line-height;
+    font-size: $font-size;
+    background-color: $bg-color;
+}
+
+// Mixin que acepte selectores
+@mixin widget($padding, $header-font, $header-color) {
+    display: block;
+    padding: $padding;
+    @at-root #{&}.header {
+        font-family: $header-font;
+        color: $header-color;
+    }
+}
+
+// Mixin que acepte numero ideterminados de argumentos
+@mixin multiple($box-shadow...) {
+    box-shadow: $box-shadow;
+}
+
+// Pasar contenido al mixin 
+@mixin menu {
+    list-style: none;
+    @content;
+}
+
+.button {
+    @include button(1.5, 34px);
+    &-danger {
+        @include button(1, 20px, red);
+    }
+}
+
+.widget {
+    @include widget(1em, Arial, blue);
+}
+
+.box {
+    $box-shadow: 1px solid red, 2px solid white, 5px solid blue;
+    @include multiple($box-shadow);
+}
+
+.menu {
+    @include menu {
+        li {
+            color: #fff;
+        }
+    }
+    ;
+}

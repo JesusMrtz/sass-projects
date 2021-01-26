@@ -1,0 +1,23 @@
+/* Recorrer una lista con @each */
+
+$colors: "white",
+"blue",
+"yellow",
+"red",
+"green";
+@each $color in $colors {
+    .button.#{$color} {
+        background-color: unquote($color);
+    }
+}
+
+
+/* Recorrer un mapa con @each */
+
+$networks: (facebook: blue, youtube: red, twitter: rebeccapurple);
+@each $network,
+$color in $networks {
+    .button.#{$network} {
+        background-color: $color;
+    }
+}

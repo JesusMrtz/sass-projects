@@ -1,0 +1,21 @@
+body {
+    background-color: #111;
+}
+
+@function spectrum($direction) {
+    $linear-gradient: 'linear-gradient(#{$direction}';
+    @for $i from 0 through 360 {
+        $current-color: hsl($i, 100, 50);
+        $linear-gradient: '#{$linear-gradient}, #{$current-color}';
+    }
+    $linear-gradient: unquote("#{$linear-gradient})");
+    @return $linear-gradient;
+}
+
+.box {
+    width: 90%;
+    height: 300px;
+    border: 1px solid white;
+    margin: 2em auto;
+    background: spectrum("to left");
+}

@@ -1,0 +1,6 @@
+Un mixins en SASS es un conjunto de estilos reeutilizables pero puede modificarse dinamicamente
+    - PAra crear un mixin se utiliza @mixin 
+    - para ejecutarlo se utiliza @include
+
+
+Cuando se le pone @content es par escribir mas código dentro del mixin (es como @yield en laravel)

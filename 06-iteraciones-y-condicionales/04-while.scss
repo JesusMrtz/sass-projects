@@ -1,0 +1,15 @@
+/* Recorrer una lista con @while */
+
+$colors: "white",
+"blue",
+"yellow",
+"red",
+"green";
+$i: 1;
+@while $i <=length($colors) {
+    $current: nth($colors, $i);
+    .button.#{$current} {
+        background-color: unquote($current);
+    }
+    $i: $i+1;
+}

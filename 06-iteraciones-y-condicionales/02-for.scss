@@ -1,0 +1,21 @@
+/* Repetir 10 veces el código creando un selector con un valor de width en porcentaje  */
+
+@for $i from 1 through 10 {
+    .item-#{$i} {
+        width: percentage($i / 10);
+    }
+}
+
+
+/* Recorrer una lista con @for */
+
+$list: "blue",
+"red",
+"black",
+"white";
+@for $i from 1 through length($list) {
+    $currentColor: nth($list, $i);
+    .button.#{$currentColor} {
+        background-color: unquote($currentColor);
+    }
+}

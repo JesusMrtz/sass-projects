@@ -1,0 +1,17 @@
+/* Un placeholder es un bloque de declaraciones pero no se compila a nada.
+Es util para guardar ciertos elementos o estilos y utilizarlo cuando lo necesites  */
+
+%placeholder {
+    width: 200px;
+    height: 100px;
+    background-color: rebeccapurple;
+}
+
+.banner {
+    // Llamada al placeholder
+    @extend %placeholder;
+}
+
+.banner-2 {
+    @extend %placeholder;
+}
